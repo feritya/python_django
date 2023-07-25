@@ -1,0 +1,17 @@
+<!-- cms/templates/makale_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Makale Listesi</title>
+</head>
+<body>
+    <h1>Makale Listesi</h1>
+    <ul>
+        <a href "color=red">
+        {% for makale in makaleler %}
+            <li>{{ makale.baslik }}</li>
+        {% endfor %}
+        </a>
+    </ul>
+</body>
+</html>

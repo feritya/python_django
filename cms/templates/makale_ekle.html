@@ -1,0 +1,15 @@
+    <!-- cms/templates/makale_ekle.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Makale Ekle</title>
+</head>
+<body>
+    <h1>Makale Ekle</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Kaydet</button>
+    </form>
+</body>
+</html>
