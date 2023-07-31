@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> landing-minton </title>
+    </head>
+<body>
+    <h1>Slider</h1>
+    <ul> 
+        {% for slider in sliders %}
+        <li>{{ slider.title }}</li>
+        <img src="{{ slider.image.url }}" alt="{{ slider.title }}">
+        {% endfor %}
+    </ul>
+    <h1>Navbar</h1>
+    <ul> 
+        {% for navbar in navbars %}
+        <li><a href="{{ navbar.url }}">{{ navbar.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
