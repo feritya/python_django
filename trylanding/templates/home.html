@@ -1,0 +1,14 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Welcome to My CMS!</h2>
+    <p>Check out our pages:</p>
+    <ul>
+        {% for page in pages %}
+            <li><a href="{% url 'page_detail' page.slug %}">{{ page.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

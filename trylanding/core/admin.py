@@ -1,8 +1,12 @@
+# my_cms_app/admin.py
 from django.contrib import admin
-from .models import Slider, Navbar
-class NavbarAdmin(admin.ModelAdmin):
-    list_display = ['title', 'url']
+from .models import Page, Comment
 
-admin.site.register(Slider)
-admin.site.register(Navbar, NavbarAdmin)
+@admin.register(Page)
+class PageAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'created_at', 'updated_at']
+    prepopulated_fields = {'slug': ('title',)}
 
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['user', 'page', 'content', 'created_at']

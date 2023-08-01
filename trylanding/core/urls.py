@@ -1,8 +1,10 @@
+# my_cms_app/urls.py
 from django.urls import path
-
-from .views import home, navbar_detail
+from . import views
 
 urlpatterns = [
-    path("", home, name="home"),
-     path('navbar/<int:navbar_id>/', navbar_detail, name='navbar_detail'),
+    path('', views.home, name='home'),
+    path('page/index/', views.index, name='index'),
+    path('page/<slug:slug>/', views.page_detail, name='page_detail'),
+    
 ]

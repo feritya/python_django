@@ -1,0 +1,16 @@
+<!-- templates/page_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.content }}</p>
+    <hr>
+    <h3>Comments</h3>
+    <ul>
+        {% for comment in page.comment_set.all %}
+            <li>{{ comment.user.username }} - {{ comment.created_at }}<br>{{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
